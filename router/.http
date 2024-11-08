@@ -1,0 +1,40 @@
+GET http://localhost:8000/api/home
+
+###
+//Insere o Novo Endereço
+POST http://localhost:5000/api/inserirCep
+Content-Type: application/json
+
+{
+    "cep": "",
+    "rua": "",
+    "bairro": "",
+    "cidade": "",
+    "estado": ""
+}
+
+###
+//Busca o endereço por cep
+GET http://localhost:5000/api/buscarCep/08562500
+
+###
+//Trás todos os dados por id
+GET http://localhost:5000/api/buscarPorid/3
+
+###
+//Filtra os dados por cidade
+GET http://localhost:5000/api/filtrarPorCidade?cidade=Salvador
+
+###
+//Atualiza o campo desejado
+PUT http://localhost:5000/api/updateEndereco/4
+Content-Type: application/json
+
+{
+    "campo" : "Cidade",
+    "valor" : "Aruja"
+}
+
+###
+//Apaga o endereço desejado
+DELETE http://localhost:5000/api/deleteEndereco/3
